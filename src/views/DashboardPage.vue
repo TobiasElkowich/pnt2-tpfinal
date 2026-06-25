@@ -16,12 +16,10 @@ const tasks = ref([]);
 const loading = ref(true);
 const errorMessage = ref('');
 
-// --- Estado de la IA Generativa ---
 const aiPrompt = ref('');
 const aiGenerating = ref(false);
 const generatedTasks = ref(null);
 
-// --- Carga de Datos ---
 const fetchData = async () => {
   loading.value = true;
   errorMessage.value = '';
@@ -40,7 +38,6 @@ const fetchData = async () => {
   }
 };
 
-// --- Estadísticas Computadas (Solo para Admin) ---
 const stats = computed(() => {
   const totalProjects = projects.value.length;
   const activeProjects = projects.value.filter(p => p.status === 'Active').length;
